@@ -39,21 +39,18 @@ function valueHand($hand) {
 
         switch ($cardArray[0]) {
             case 'Ace':
-                
-                // Refactor to ternary.
-                if (valueHand($hand) <= 10) {
-                    $value += 11;
-                }
 
+                if ($value <= 10) {  // ******
+                    $acevalue=11; 
+                    $value += $acevalue; 
+                }
                 else {
-                    $value += 1;
+                    $acevalue=1;
+                    $value += $acevalue; //********
                 }
 
-                //$aceValue = (valueHand($hand) <= 10) ? $aceValue += 11 : $aceValue += 1 ;
                 echo "$aceValue" . PHP_EOL;
-
                 break;
-
             case 'King':
                 $value += 10;
                 break;
